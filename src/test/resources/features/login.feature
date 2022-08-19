@@ -19,7 +19,7 @@ Feature:Library app login feature
     And User enters student password
     Then User should see dashboard
 
-  @admin @employee
+  @admin @employee @db
   Scenario: Login as admin
     When User enters admin username
     And User enters admin password
