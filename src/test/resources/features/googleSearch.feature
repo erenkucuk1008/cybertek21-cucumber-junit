@@ -18,6 +18,6 @@ Feature: Google search functionality
   @wip
   Scenario: Search page title verification
     Given User is on Google home page
-    When User searches for "eren"
-    Then User should see "eren" in the title
+    When User searches for "orange"
+    Then User should see "orange" in the title
     #parameterization yaptik
