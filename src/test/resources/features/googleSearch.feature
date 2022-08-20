@@ -20,3 +20,4 @@ Feature: Google search functionality
     Given User is on Google home page
     When User searches for "orange"
     Then User should see "orange" in the title
+    #Paremeterization yaptik
