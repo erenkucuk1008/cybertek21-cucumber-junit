@@ -12,8 +12,8 @@ import org.openqa.selenium.Keys;
 
 public class Etsy_StepDefinitions {
 
-    @Given("user is on www.etsy.com")
-    public void user_is_on_www_etsy_com() {
+    @Given("user is on etsy landing page")
+    public void user_is_on_etsy_landing_page() {
         String url = ConfigurationReader.getProperty("etsyURL");
         Driver.getDriver().get(url);
     }
