@@ -11,6 +11,8 @@ import org.openqa.selenium.Keys;
 
 public class Etsy_StepDefinitions {
 
+    EtsySearchPage etsySearchPage = new EtsySearchPage();
+
     @Given("user is on etsy landing page")
     public void user_is_on_etsy_landing_page() {
         String url = ConfigurationReader.getProperty("etsyURL");
@@ -26,7 +28,6 @@ public class Etsy_StepDefinitions {
 
     @When("user types Wooden spoon in the search box")
     public void user_types_wooden_spoon_in_the_search_box() {
-        EtsySearchPage etsySearchPage = new EtsySearchPage();
         etsySearchPage.etsySearch.sendKeys("Wooden spoon"+ Keys.ENTER);
     }
 
@@ -39,7 +40,6 @@ public class Etsy_StepDefinitions {
 
     @When("user types {string} in the search box")
     public void user_types_in_the_search_box(String string) {
-        EtsySearchPage etsySearchPage = new EtsySearchPage();
         etsySearchPage.etsySearch.sendKeys(string+Keys.ENTER);
     }
 
