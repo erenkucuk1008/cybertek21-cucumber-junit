@@ -51,7 +51,5 @@ public class Google_StepDefinitions {
         String actualTitle = Driver.getDriver().getTitle();
         String expectedInTitle = string;
         Assert.assertTrue(actualTitle.contains(expectedInTitle));
-
     }
-
 }
