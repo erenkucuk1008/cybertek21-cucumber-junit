@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class EtsyPage {
+public class EtsySearchPage {
 
-    public EtsyPage(){
+    public EtsySearchPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

@@ -1,9 +1,8 @@
 package com.cybertek.step_definitions;
 
-import com.cybertek.pages.EtsyPage;
+import com.cybertek.pages.EtsySearchPage;
 import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.Driver;
-import io.cucumber.java.an.E;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -27,8 +26,8 @@ public class Etsy_StepDefinitions {
 
     @When("user types Wooden spoon in the search box")
     public void user_types_wooden_spoon_in_the_search_box() {
-        EtsyPage etsyPage = new EtsyPage();
-        etsyPage.etsySearch.sendKeys("Wooden spoon"+ Keys.ENTER);
+        EtsySearchPage etsySearchPage = new EtsySearchPage();
+        etsySearchPage.etsySearch.sendKeys("Wooden spoon"+ Keys.ENTER);
     }
 
     @Then("user sees Wooden spoon in the title")
@@ -40,8 +39,8 @@ public class Etsy_StepDefinitions {
 
     @When("user types {string} in the search box")
     public void user_types_in_the_search_box(String string) {
-        EtsyPage etsyPage = new EtsyPage();
-        etsyPage.etsySearch.sendKeys(string+Keys.ENTER);
+        EtsySearchPage etsySearchPage = new EtsySearchPage();
+        etsySearchPage.etsySearch.sendKeys(string+Keys.ENTER);
     }
 
     @Then("user sees {string} in the title")
