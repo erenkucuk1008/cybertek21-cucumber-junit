@@ -7,6 +7,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Google_StepDefinitions {
 
@@ -53,5 +58,16 @@ public class Google_StepDefinitions {
         String actualTitle = Driver.getDriver().getTitle();
         String expectedInTitle = string;
         Assert.assertTrue(actualTitle.contains(expectedInTitle));
+    }
+
+    @Then("User should see the following links")
+    public void user_should_see_the_following_links(List<String> expectedFooterLinks) {
+
+        System.out.println("expectedFooterLinks = " + expectedFooterLinks);
+
+        for (WebElement eachLink : googleSearchPage.footerLinks) {
+            System.out.println("eachLink = " + eachLink.getText());
+        }
+
     }
 }

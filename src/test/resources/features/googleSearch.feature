@@ -21,3 +21,14 @@ Feature: Google search functionality
     When User searches for "orange"
     Then User should see "orange" in the title
     #Paremeterization yaptik
+
+  @googleDataTable
+  Scenario: Google home page footer links verification
+    Given User is on Google home page
+    Then User should see the following links
+      | Advertising               |
+      | Business                  |
+      | How Search Works          |
+      | Carbon neutral since 2007 |
+      | Privacy                   |
+      | Terms                     |
