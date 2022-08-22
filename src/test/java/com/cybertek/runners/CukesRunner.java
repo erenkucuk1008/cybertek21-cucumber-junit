@@ -10,7 +10,7 @@ package com.cybertek.runners;
         features = "src/test/resources/features",
         glue = "com/cybertek/step_definitions",
         dryRun = false,
-        tags = "@etsy"
+        tags = "@dataTable"
 )
 public class CukesRunner {
 }
