@@ -10,3 +10,4 @@ Feature: Simple examples of how dataTables work
       | Brocoli    |
       | Watermelon |
     # control + ALT + L duzenlemek icin
+    #control + D copy yapmak icin
