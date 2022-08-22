@@ -10,6 +10,8 @@ import org.openqa.selenium.Keys;
 
 public class Google_StepDefinitions {
 
+    GoogleSearchPage googleSearchPage = new GoogleSearchPage();
+
     @Given("User is on Google home page")
     public void user_is_on_google_home_page() {
         Driver.getDriver().get("http://www.google.com");
@@ -17,7 +19,7 @@ public class Google_StepDefinitions {
 
     @When("User searches for apple")
     public void user_searches_for_apple() {
-        GoogleSearchPage googleSearchPage = new GoogleSearchPage();
+
         googleSearchPage.searchBar.sendKeys("apple" + Keys.ENTER);
     }
 
@@ -30,7 +32,7 @@ public class Google_StepDefinitions {
 
     @When("User searches for galatasaray")
     public void user_searches_for_galatasaray() {
-        GoogleSearchPage googleSearchPage = new GoogleSearchPage();
+
         googleSearchPage.searchBar.sendKeys("galatasaray" + Keys.ENTER);
     }
 
@@ -43,7 +45,7 @@ public class Google_StepDefinitions {
 
     @When("User searches for {string}")
     public void user_searches_for(String string) {
-        GoogleSearchPage googleSearchPage = new GoogleSearchPage();
+
         googleSearchPage.searchBar.sendKeys(string + Keys.ENTER);
     }
     @Then("User should see {string} in the title")
