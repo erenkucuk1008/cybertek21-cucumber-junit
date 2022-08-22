@@ -2,6 +2,7 @@
 Feature: Wikipedia search feature
   As a user, I should be able to search terms and see related results
 
+  #ilk 2 senaryo icin: ilk 3 step i background olarak da yazabiliriz
   Scenario: Wikipedia search functionality title verification
     Given user is on Wikipedia home page
     When user types "Steve Jobs" in the wiki search box
