@@ -2,16 +2,32 @@
 Feature: Wikipedia search feature
   As a user, I should be able to search terms and see related results
 
-  Background: user is already do these steps
-    Given user is on Wikipedia home page
-    When user types Steve Jobs in the wiki search box
-    And user clicks wiki search button
-
   Scenario: Wikipedia search functionality title verification
-    Then user sees Steve Jobs in the wiki title
+    Given user is on Wikipedia home page
+    When user types "Steve Jobs" in the wiki search box
+    And user clicks wiki search button
+    Then user sees "Steve Jobs" in the wiki title
 
   Scenario: Wikipedia search functionality header verification
-    Then user sees Steve Jobs in the main header
+    Given user is on Wikipedia home page
+    When user types "Steve Jobs" in the wiki search box
+    And user clicks wiki search button
+    Then user sees "Steve Jobs" in the main header
 
-  Scenario: Wikipedia search functionality image header verification
-    Then user sees Steve Jobs in the image header
+
+  @scenarioOutline
+  Scenario Outline: Wikipedia search header verification
+    Given user is on Wikipedia home page
+    When user sees "<searchValue>" in the wiki title
+    And user clicks wiki search button
+    Then user sees "<expectedMainHeader>" in the main header
+    Then user sees "<expectedTitle>" in the wiki title
+
+    Examples: search terms we are going to search in wikipedia
+      | searchValue | expectedMainHeader | expectedTitle |
+      | Steve Jobs  | Steve Jobs         | Steve Jobs    |
+      | Elon Musk   | Elon Musk          | Elon Musk     |
+      | Bill Gates  | Bill Gates         | Bill Gates    |
+      | Fatih Terim | Fatih Terim        | Fatih Terim   |
+      | Kobe Bryant | Kobe Bryant        | Kobe Bryant   |
+

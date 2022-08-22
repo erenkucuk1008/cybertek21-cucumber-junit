@@ -18,31 +18,29 @@ public class Wikipedia_StepDefinitions {
         Driver.getDriver().get(url);
     }
 
-    @When("user types Steve Jobs in the wiki search box")
-    public void user_types_steve_jobs_in_the_wiki_search_box() {
-        wikiPage.searchBar.sendKeys("Steve Jobs");
+    @When("user types {string} in the wiki search box")
+    public void user_types_in_the_wiki_search_box(String string) {
+
+        wikiPage.searchBar.sendKeys(string);
     }
+
     @When("user clicks wiki search button")
     public void user_clicks_wiki_search_button() {
         wikiPage.searchButton.click();
     }
-    @Then("user sees Steve Jobs in the wiki title")
-    public void user_sees_steve_jobs_in_the_wiki_title() {
+
+    @Then("user sees {string} in the wiki title")
+    public void user_sees_in_the_wiki_title(String string) {
         String actualTitle = Driver.getDriver().getTitle();
-        String expectedTitle = "Steve Jobs";
+        String expectedTitle = string;
         Assert.assertTrue(actualTitle.contains(expectedTitle));
     }
 
-    @Then("user sees Steve Jobs in the main header")
-    public void user_sees_steve_jobs_in_the_main_header() {
+    @Then("user sees {string} in the main header")
+    public void user_sees_in_the_main_header(String arg0) {
         String mainHeaderText = wikiPage.mainHeader.getText();
-        Assert.assertTrue(mainHeaderText.equals("Steve Jobs"));
+        Assert.assertTrue(mainHeaderText.equals(arg0));
         Assert.assertTrue(wikiPage.mainHeader.isDisplayed());
     }
 
-
-    @Then("user sees Steve Jobs in the image header")
-    public void user_sees_steve_jobs_in_the_image_header() {
-
-    }
 }
