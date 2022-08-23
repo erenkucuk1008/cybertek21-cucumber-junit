@@ -9,6 +9,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -65,9 +66,19 @@ public class Google_StepDefinitions {
 
         System.out.println("expectedFooterLinks = " + expectedFooterLinks);
 
+        List<String> footerLinks = new ArrayList<>();//yeni bi liste olusturmamizin sebebi
+        //google.com dan gelen web elementleri bu listeye eklememizdir.
+        //bunun sebebide Assert yaparken iki String i compare edebilmek icin.
+        //String ve WebElement compare edilemez... elma elma ile toplanmali veya kiyaslanmali
+
         for (WebElement eachLink : googleSearchPage.footerLinks) {
-            System.out.println("eachLink = " + eachLink.getText());
+            footerLinks.add(eachLink.getText());// web elementleri tek tek bulup, textlerini yeni
+            //kurdugumuz listeye ekliyoruz.
         }
+
+        Assert.assertEquals(footerLinks, expectedFooterLinks);
+
+        System.out.println("footerLinks = " + footerLinks);
 
     }
 }

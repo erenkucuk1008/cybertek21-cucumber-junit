@@ -28,7 +28,7 @@ Feature: Google search functionality
     Then User should see the following links
       | Advertising               |
       | Business                  |
-      | How Search Works          |
+      | How Search works          |
       | Carbon neutral since 2007 |
       | Privacy                   |
       | Terms                     |
