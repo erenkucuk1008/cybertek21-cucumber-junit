@@ -1,6 +1,7 @@
 package com.cybertek.step_definitions;
 
 import com.cybertek.pages.GoogleSearchPage;
+import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -64,14 +65,16 @@ public class Google_StepDefinitions {
     @Then("User should see the following links")
     public void user_should_see_the_following_links(List<String> expectedFooterLinks) {
 
-        System.out.println("expectedFooterLinks = " + expectedFooterLinks);
-
+        List<String> actualFooterLinks = BrowserUtils.getElementTexts(googleSearchPage.footerLinks);
+        Assert.assertTrue(expectedFooterLinks.equals(actualFooterLinks));
+/*
+        List<WebElement> actualFooterLinks = googleSearchPage.footerLinks;
         List<String> footerLinks = new ArrayList<>();//yeni bi liste olusturmamizin sebebi
         //google.com dan gelen web elementleri bu listeye eklememizdir.
         //bunun sebebide Assert yaparken iki String i compare edebilmek icin.
         //String ve WebElement compare edilemez... elma elma ile toplanmali veya kiyaslanmali
 
-        for (WebElement eachLink : googleSearchPage.footerLinks) {
+        for (WebElement eachLink : actualFooterLinks) {
             footerLinks.add(eachLink.getText());// web elementleri tek tek bulup, textlerini yeni
             //kurdugumuz listeye ekliyoruz.
         }
@@ -79,6 +82,8 @@ public class Google_StepDefinitions {
         Assert.assertEquals(footerLinks, expectedFooterLinks);
 
         System.out.println("footerLinks = " + footerLinks);
+
+ */
 
     }
 }
