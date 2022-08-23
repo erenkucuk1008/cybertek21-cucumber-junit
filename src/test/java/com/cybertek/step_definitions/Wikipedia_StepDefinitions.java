@@ -32,8 +32,7 @@ public class Wikipedia_StepDefinitions {
     @Then("user sees {string} in the wiki title")
     public void user_sees_in_the_wiki_title(String string) {
         String actualTitle = Driver.getDriver().getTitle();
-        String expectedTitle = string;
-        Assert.assertTrue(actualTitle.contains(expectedTitle));
+        Assert.assertTrue(actualTitle.contains(string));
     }
 
     @Then("user sees {string} in the main header")
