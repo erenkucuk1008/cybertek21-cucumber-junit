@@ -8,6 +8,7 @@ import java.util.List;
 
 public class BrowserUtils {
 
+    //List<WebElement> olarak store edilen webElementlerin get.Text ini alarak List<String> ile compare eden method
     public static List<String> getElementTexts(List<WebElement> webElementList){
 
         List<String> webElementListAsString = new ArrayList<>();

@@ -65,8 +65,11 @@ public class Google_StepDefinitions {
     @Then("User should see the following links")
     public void user_should_see_the_following_links(List<String> expectedFooterLinks) {
 
+
         List<String> actualFooterLinks = BrowserUtils.getElementTexts(googleSearchPage.footerLinks);
         Assert.assertTrue(expectedFooterLinks.equals(actualFooterLinks));
+
+
 /*
         List<WebElement> actualFooterLinks = googleSearchPage.footerLinks;
         List<String> footerLinks = new ArrayList<>();//yeni bi liste olusturmamizin sebebi
@@ -80,9 +83,6 @@ public class Google_StepDefinitions {
         }
 
         Assert.assertEquals(footerLinks, expectedFooterLinks);
-
-        System.out.println("footerLinks = " + footerLinks);
-
  */
 
     }
