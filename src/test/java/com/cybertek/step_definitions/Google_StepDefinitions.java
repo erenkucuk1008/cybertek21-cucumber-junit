@@ -71,6 +71,8 @@ public class Google_StepDefinitions {
 
 
 /*
+    METHOD KULLANMADAN ONCE ASAGIDAKI GIBI YAZIYORDUK
+
         List<WebElement> actualFooterLinks = googleSearchPage.footerLinks;
         List<String> footerLinks = new ArrayList<>();//yeni bi liste olusturmamizin sebebi
         //google.com dan gelen web elementleri bu listeye eklememizdir.
