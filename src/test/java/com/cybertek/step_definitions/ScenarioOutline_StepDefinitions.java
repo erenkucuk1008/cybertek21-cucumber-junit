@@ -3,6 +3,7 @@ package com.cybertek.step_definitions;
 import com.cybertek.pages.SbOrderPage;
 import com.cybertek.pages.Sb_ViewAllOrdersPage;
 import com.cybertek.pages.SmartBearLoginPage;
+import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -106,5 +107,8 @@ public class ScenarioOutline_StepDefinitions {
         sbOrderPage.viewAllOrders.click();
         String actualName = sb_viewAllOrdersPage.nameInList.getText();
         Assert.assertTrue(actualName.equals(expectedName));
+
+        //methodla yapiyoruz tek satirda..
+        //BrowserUtils.isOnTheList(expectedName);
     }
 }

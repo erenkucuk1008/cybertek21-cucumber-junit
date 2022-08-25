@@ -1,5 +1,6 @@
 package com.cybertek.utilities;
 
+import com.cybertek.pages.Sb_ViewAllOrdersPage;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
@@ -7,6 +8,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BrowserUtils {
+
+    public static Sb_ViewAllOrdersPage sb_viewAllOrdersPage = new Sb_ViewAllOrdersPage();
+
+    public static boolean isOnTheList(String name){
+        boolean result = false;
+        for (String s : getElementTexts(sb_viewAllOrdersPage.listOfNames)) {
+            if (s.equals(name)){
+                result=true;
+                break;
+            }
+        }
+        return result;
+    }
 
     //List<WebElement> olarak store edilen webElementlerin get.Text ini alarak List<String> ile compare eden method
     public static List<String> getElementTexts(List<WebElement> webElementList){
