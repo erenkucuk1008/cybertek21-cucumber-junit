@@ -1,5 +1,6 @@
 package com.cybertek.step_definitions;
 
+import com.cybertek.pages.DropDownPage;
 import com.cybertek.pages.SmartBearLoginPage;
 import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.ConfigurationReader;
@@ -7,13 +8,19 @@ import com.cybertek.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.eo.Se;
+import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class DataTables_StepDefinitions {
 
     SmartBearLoginPage smartBearLoginPage = new SmartBearLoginPage();
+    DropDownPage dropDownPage = new DropDownPage();
 
     @Then("user should see below words displayed")
     public void user_should_see_below_words_displayed(List<String> fruitLists) {
@@ -25,8 +32,6 @@ public class DataTables_StepDefinitions {
             System.out.println("eachFruit = " + eachFruit);
         }
     }
-
-
 
     @Given("User is on the login page of SmartBear")
     public void user_is_on_the_login_page_of_smart_bear() {
@@ -53,5 +58,19 @@ public class DataTables_StepDefinitions {
     public void user_should_see_title_changed_to_web_orders() {
 
         BrowserUtils.titleVerification("Web Orders");
+    }
+
+    @Given("user is on the dropdowns page of practice tool")
+    public void user_is_on_the_dropdowns_page_of_practice_tool() {
+        Driver.getDriver().get("http://practice.cybertekschool.com/dropdown");
+    }
+    @Then("user should see below info in month dropdowns")
+    public void user_should_see_below_info_in_month_dropdowns(List<String> expectedList) {
+
+        Select months = new Select(dropDownPage.monthsDropDown);
+
+        List<String> actualList = BrowserUtils.getElementTexts(months.getOptions());
+
+        Assert.assertTrue(actualList.equals(expectedList));
     }
 }
