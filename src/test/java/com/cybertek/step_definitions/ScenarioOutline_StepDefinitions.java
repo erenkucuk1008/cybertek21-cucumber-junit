@@ -104,9 +104,7 @@ public class ScenarioOutline_StepDefinitions {
     public void user_verifies_is_in_the_list(String expectedName) {
 
         sbOrderPage.viewAllOrders.click();
-
         String actualName = sb_viewAllOrdersPage.nameInList.getText();
-
         Assert.assertTrue(actualName.equals(expectedName));
     }
 }
