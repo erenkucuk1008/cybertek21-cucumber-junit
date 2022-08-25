@@ -18,5 +18,6 @@ Feature: Smartbear order feature
     Then user verifies "<expected name>" is in the list
 
     Examples:
-      | product | quantity | actual name | street   | city     | state | zip   | cardType | card number      | expiration date | expected name |
-      | MyMoney | 1        | Eren        | kepakepa | mililani | HI    | 98999 | visa     | 3333444422225555 | 12/24           | eren          |
+      | product     | quantity | actual name | street   | city     | state | zip   | cardType | card number      | expiration date | expected name |
+      | MyMoney     | 4        | ErenK       | Kepakepa | Waipahu  | HI    | 98999 | Visa     | 3333444422225555 | 12/24           | ErenK         |
+      | FamilyAlbum | 2        | Arzum       | Ukuwai   | Mililani | HI    | 12333 | Visa     | 4444555544445555 | 05/23           | Arzum         |

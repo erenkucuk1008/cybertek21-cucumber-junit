@@ -13,7 +13,7 @@ package com.cybertek.runners;
         },
         features = "src/test/resources/features",
         glue = "com/cybertek/step_definitions",
-        dryRun = true,
+        dryRun = false,
         tags = "@scenarioOutline"
 )
 public class CukesRunner {
