@@ -13,5 +13,5 @@ Feature: Etsy search feature
 
   Scenario: Etsy wooden spoon title verification
     Given user is on etsy landing page
-    When user types "Eren" in the search box
-    Then user sees "Eren" in the title
+    When user types "wooden spoon" in the search box
+    Then user sees "wooden spoon" in the title
