@@ -64,6 +64,7 @@ public class DataTables_StepDefinitions {
     public void user_is_on_the_dropdowns_page_of_practice_tool() {
         Driver.getDriver().get("http://practice.cybertekschool.com/dropdown");
     }
+
     @Then("user should see below info in month dropdowns")
     public void user_should_see_below_info_in_month_dropdowns(List<String> expectedList) {
 

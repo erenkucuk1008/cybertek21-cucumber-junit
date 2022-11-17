@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BrowserUtils {
+public class  BrowserUtils {
 
     public static Sb_ViewAllOrdersPage sb_viewAllOrdersPage = new Sb_ViewAllOrdersPage();
 

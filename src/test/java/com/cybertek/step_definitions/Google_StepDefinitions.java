@@ -26,7 +26,6 @@ public class Google_StepDefinitions {
 
     @When("User searches for apple")
     public void user_searches_for_apple() {
-
         googleSearchPage.searchBar.sendKeys("apple" + Keys.ENTER);
     }
 
@@ -39,7 +38,6 @@ public class Google_StepDefinitions {
 
     @When("User searches for galatasaray")
     public void user_searches_for_galatasaray() {
-
         googleSearchPage.searchBar.sendKeys("galatasaray" + Keys.ENTER);
     }
 
@@ -52,7 +50,6 @@ public class Google_StepDefinitions {
 
     @When("User searches for {string}")
     public void user_searches_for(String string) {
-
         googleSearchPage.searchBar.sendKeys(string + Keys.ENTER);
     }
     @Then("User should see {string} in the title")
@@ -64,8 +61,6 @@ public class Google_StepDefinitions {
 
     @Then("User should see the following links")
     public void user_should_see_the_following_links(List<String> expectedFooterLinks) {
-
-
         List<String> actualFooterLinks = BrowserUtils.getElementTexts(googleSearchPage.footerLinks);
         Assert.assertTrue(expectedFooterLinks.equals(actualFooterLinks));
 

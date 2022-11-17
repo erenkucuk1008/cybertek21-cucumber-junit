@@ -12,4 +12,5 @@ public class Sb_ViewAllOrdersPage extends SbBasePage{
 
     @FindBy(xpath = "//td[2]")
     public List<WebElement> listOfNames;
+
 }
