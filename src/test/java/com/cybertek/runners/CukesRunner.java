@@ -14,7 +14,7 @@ package com.cybertek.runners;
         features = "src/test/resources/features",
         glue = "com/cybertek/step_definitions",
         dryRun = false,
-        tags = "@dataTable"
+        tags = "@s1"
 )
 public class CukesRunner {
 }
